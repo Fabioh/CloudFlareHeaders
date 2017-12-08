@@ -12,6 +12,8 @@ namespace TestCF.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["CF-Connecting-IP"] = Request.Headers["CF-Connecting-IP"];
+            ViewData["RemoteIpAddress"] = Request.HttpContext.Connection.RemoteIpAddress;
             return View();
         }
 
