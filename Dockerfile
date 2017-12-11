@@ -9,10 +9,10 @@ COPY TestCF.csproj .
 RUN dotnet restore
 COPY . .
 WORKDIR /src/
-RUN dotnet build -c Release -o /app
+RUN dotnet build -c Release -o /app TestCF.csproj
 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app
+RUN dotnet publish -c Release -o /app TestCF.csproj
 
 FROM base AS final
 WORKDIR /app
