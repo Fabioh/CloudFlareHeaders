@@ -17,4 +17,5 @@ RUN dotnet publish -c Release -o /app TestCF.csproj
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
+EXPOSE 5000
 ENTRYPOINT ["dotnet", "TestCF.dll"]
