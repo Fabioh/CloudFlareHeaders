@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  testcf:
+    image: testcf
+    build:
+      context: .
+      dockerfile: Dockerfile
