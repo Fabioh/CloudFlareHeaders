@@ -14,20 +14,7 @@ namespace TestCF.Controllers
         {
             ViewData["CF-Connecting-IP"] = Request.Headers["CF-Connecting-IP"];
             ViewData["RemoteIpAddress"] = Request.HttpContext.Connection.RemoteIpAddress;
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
+			ViewData["CF-IPCountry"] = Request.Headers["CF-IPCountry"];
             return View();
         }
 
